@@ -1,0 +1,137 @@
+body {
+  font-size: 14px;
+  font-family: Arial, Verdana, sans-serif;
+  line-height: 19px;
+}
+a {
+  color: #ffffff;
+}
+a:hover {
+  color: #ffffff;
+}
+h1 {
+  font-size: 1.5em;
+  line-height: 1.6em;
+  text-shadow: 0px 0px 4px #ffcccc;
+  color: #ffffff;
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.5em;
+  line-height: 1.6em;
+  color: #ffffff;
+  font-weight: bold;
+}
+h3 {
+  font-size: 1.5em;
+  line-height: 1.6em;
+}
+header,
+footer {
+  position: fixed;
+  width: 100%;
+}
+header {
+  top: 0;
+}
+footer {
+  bottom: 0;
+}
+header {
+  height: 5.6em;
+  background: #1e4164;
+  padding-bottom: 0.5em;
+}
+header section {
+  float: left;
+}
+header section.left-column {
+  padding-left: 1%;
+  width: 70%;
+}
+header section.right-column {
+  width: 28%;
+}
+header nav {
+  padding: .2em;
+  margin-top: .5em;
+  border: 1px solid #1e4164;
+}
+header nav a {
+  display: block;
+  text-align: center;
+  float: left;
+}
+section.social-options label {
+  line-height: 2.0em;
+  cursor: pointer;
+  padding: .3em;
+  margin-right: .4em;
+}
+section.social-options label input {
+  display: none;
+}
+section.social-options label.active {
+  cursor: pointer;
+  padding: .3em;
+  margin-right: .4em;
+  color: #ffffff;
+  border: 1px solid #1e4164;
+}
+section.social-options label.inactive {
+  border: 1px solid #999999;
+  color: #cccccc;
+  background: #999999;
+}
+section.social-options label.inactive:hover {
+  cursor: pointer;
+  padding: .3em;
+  margin-right: .4em;
+  color: #ffffff;
+  border: 1px solid #1e4164;
+}
+#main-content {
+  margin-top: 5.6em;
+  margin-bottom: 9.6em;
+}
+#main-content ul.feed li {
+  padding: .4em .4em;
+  border-bottom: 1px solid #ffffff;
+}
+#main-content ul.feed li.even {
+  color: #8b9dc3;
+  background: #aadffa;
+}
+#main-content ul.feed li.even h2 {
+  color: #8b9dc3;
+}
+#main-content ul.feed li.odd {
+  color: #aadffa;
+  background: #8b9dc3;
+}
+#main-content ul.feed li.odd h2 {
+  color: #aadffa;
+}
+footer {
+  padding-top: 0.5em;
+  height: 9.6em;
+  background: #1e4164;
+}
+#post {
+  text-align: center;
+}
+#post textarea {
+  width: 80%;
+  margin: .2em 1em;
+  border: none;
+  font-style: italic;
+}
+#post input[type="submit"] {
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+  width: 20%;
+  padding: .4em;
+  border: none;
+  background: #8dc63f;
+}

@@ -1,0 +1,222 @@
+//App Colors
+@linkColor: #FFF;
+@linkColorHover: darken(@linkColor,20%);
+@linkColorOpposite: #f3901d;
+@primaryColor: #FFF;
+@primaryColorShadow: #FCC;
+@secondaryColor: #1e4164;
+@importantButtonBackground: #8dc63f; //green
+@disabledPrimaryColor: #999;
+@disabledSecondaryColor: #CCC;
+
+//Typography
+@baseFontSize: 14px;
+@baseFontFamily: Arial, Verdana, sans-serif;
+@baseLineHeight: 19px;
+@topLevelHeadingFontSize: 1.5em;
+@topLevelHeadingLineHeight: 1.6em;
+
+//Layout vars
+@headerHeight: 5.6em;
+@footerHeight: 9.6em;
+@paddingHeaderFooter: .5em;
+
+//Mixins
+.clear_fix{
+	zoom:1;
+	&:after {
+		content:".";display:block;height:0;clear:both;visibility:hidden;
+	}
+}
+
+.background-gradient(@color1, @percent1, @color2, @percent2, @color3, @percent3)
+	when (iscolor(@color1)), (iscolor(@color2)), (iscolor(@color3)), (isnumber(@percent1)), (isnumber(@percent2)), (isnumber(@percent3)){
+	background: @color1;
+	background: -moz-linear-gradient(top,  @color1 @percent1, @color2 @percent2, @color3 @percent3);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(@percent1,@color1), color-stop(@percent2,@color2), color-stop(@percent3,@color3));
+	background: -webkit-linear-gradient(top,  @color1 @percent1,@color2 @percent2,@color3 @percent3);
+	background: -o-linear-gradient(top,  @color1 @percent1,@color2 @percent2,@color3 @percent3);
+	background: -ms-linear-gradient(top,  @color1 @percent1,@color2 @percent2,@color3 @percent3);
+	background: linear-gradient(top,  @color1 @percent1,@color2 @percent2,@color3 @percent3);
+	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color1', endColorstr='@color2',GradientType=0 );	*/
+}
+
+.border-radius(@border) when (isnumber(@border)) {
+	-webkit-border-radius: @border;
+	-moz-border-radius: @border;
+	border-radius: @border;
+}
+
+.box-shadow(@style, @c) when (iscolor(@c)) {
+  box-shadow:         @style @c;
+  -webkit-box-shadow: @style @c;
+  -moz-box-shadow:    @style @c;
+}
+
+//General Tag Styles
+body {
+	font-size: @baseFontSize;
+	font-family: @baseFontFamily;
+	line-height: @baseLineHeight;
+}
+
+a {
+	color: @linkColor;
+	&:hover {
+		color: @linkColorHover;
+	}
+}
+
+//Headings
+h1 {
+	font-size: @topLevelHeadingFontSize;
+	line-height: @topLevelHeadingLineHeight;
+	text-shadow: 0px 0px 4px @primaryColorShadow;
+	color: @primaryColor;
+	font-weight: bold;
+}
+h2 {
+	font-size: @topLevelHeadingFontSize * .7;
+	line-height: @topLevelHeadingLineHeight *.7;
+	color: darken(@primaryColor,20%);
+	font-weight: bold;
+}
+h3 {
+	font-size: @topLevelHeadingFontSize * .65;
+	line-height: @topLevelHeadingLineHeight * .65;
+}
+
+//Main Document Sections
+header, footer {
+	position: fixed;
+	width: 100%;
+}
+header {
+	top: 0;
+}
+footer {
+	bottom: 0;
+}
+  
+header {
+	height: @headerHeight;
+	background: @secondaryColor;
+	.background-gradient(lighten(@secondaryColor,0%), 0%, lighten(@secondaryColor,0%), 20%, darken(@secondaryColor,10%), 90%);
+	padding-bottom:@paddingHeaderFooter;
+	.clear_fix;
+	@leftColumnWidth: 70%;
+	section {
+		float: left;
+		&.left-column {
+			padding-left: 1%;
+			width: @leftColumnWidth;
+		}
+		&.right-column {
+			width: 98-@leftColumnWidth;
+		}
+	}
+	
+	nav {
+		.clear_fix;
+		.border-radius(4px);
+		padding: .2em;
+		margin-top: .5em;
+		.background-gradient(lighten(@secondaryColor,40%), 0%, lighten(@secondaryColor,40%), 20%, lighten(@secondaryColor,30%), 90%);
+		border: 1px solid @secondaryColor;		
+		a {
+			display: block;
+			text-align: center;
+			float: left;
+		}
+	}
+}
+
+	//appears in header and footer
+section.social-options {
+	label {
+		line-height: 2.0em;
+		cursor: pointer;
+		padding: .3em;
+		margin-right: .4em;
+		.border-radius(4px);
+		input {
+			display: none;
+		}
+	}
+	//Use the .active mixin to act as an active element and also as the hover of an inactive element.
+	.active {
+		cursor: pointer;
+		padding: .3em;
+		margin-right: .4em;
+		.border-radius(4px);
+		color: @linkColor;
+		.background-gradient(darken(@linkColorOpposite,5%), 0%, darken(@linkColorOpposite,5%), 20%, lighten(@linkColorOpposite,10%), 90%);
+		border: 1px solid @secondaryColor;
+	}
+	label.active {
+		.active;
+	}
+	label.inactive {
+	  border: 1px solid @disabledPrimaryColor;
+	  color: @disabledSecondaryColor;
+	  background: @disabledPrimaryColor;
+	  &:hover {
+		.active;
+	  }
+	}
+}
+
+
+#main-content {
+	margin-top: @headerHeight + @paddingHeaderFooter;
+	margin-bottom: @footerHeight + @paddingHeaderFooter;
+	.background-gradient(lighten(@secondaryColor,60%), 0%, lighten(@secondaryColor,60%), 20%, lighten(@secondaryColor,50%), 90%);
+	ul.feed {
+		@listColor1: #8b9dc3;
+		@listColor2: #aadffa;
+		li {
+			padding: .4em .4em;
+			border-bottom: 1px solid darken(@primaryColor,20%);
+		
+			&.even {
+				color: darken(@listColor1,10%);
+				h2 {color: darken(@listColor1,10%);}
+				background: @listColor2;
+			}
+			&.odd {
+				color:  @listColor2;
+				h2 {color: @listColor2;}
+				background: @listColor1;
+			}
+		}
+	}
+}
+ 
+footer {
+	padding-top: @paddingHeaderFooter;
+	height: @footerHeight;
+	background: @secondaryColor;
+	.background-gradient(lighten(@secondaryColor,0%), 0%, lighten(@secondaryColor,0%), 20%, darken(@secondaryColor,100%), 90%);
+}
+
+#post {
+	text-align: center;
+	textarea {
+		width: 80%;
+		border-radius: .5em;
+		margin: .2em 1em;
+		border: none;
+		font-style: italic;
+	}
+	input[type="submit"] {
+		cursor: pointer;
+		color: @primaryColor;
+		font-weight: bold;
+		width: 20%;
+		padding: .4em;
+		border: none;
+		.border-radius(.4em);
+		.background-gradient(lighten(@importantButtonBackground,0%), 0%, lighten(@importantButtonBackground,0%), 20%, darken(@importantButtonBackground,10%), 90%);
+	}
+}
+

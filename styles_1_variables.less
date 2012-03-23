@@ -1,0 +1,188 @@
+//APPLICATION VARIABLES
+//Colors
+@linkColor: #FFF;
+@linkColorHover: #FFF;
+@linkColorOpposite: #f3901d;
+@primaryColor: #FFF;
+@primaryColorShadow: #FCC;
+@secondaryColor: #1e4164;
+@importantButtonBackground: #8dc63f; //green
+@disabledPrimaryColor: #999;
+@disabledSecondaryColor: #CCC;
+
+//Typography
+@baseFontSize: 14px;
+@baseFontFamily: Arial, Verdana, sans-serif;
+@baseLineHeight: 19px;
+@topLevelHeadingFontSize: 1.5em;
+@topLevelHeadingLineHeight: 1.6em;
+ 
+//Layout
+@headerHeight: 5.6em;
+@footerHeight: 9.6em;
+@paddingHeaderFooter: .5em;
+//END APPLICATION VARIABLES
+
+//General Tag Styles
+body {
+	font-size: @baseFontSize;
+	font-family: @baseFontFamily;
+	line-height: @baseLineHeight;
+}
+
+a {
+	color: @linkColor;
+}
+
+a:hover {
+	color: @linkColorHover;
+}
+
+//Headings
+h1 {
+	font-size: @topLevelHeadingFontSize;
+	line-height: @topLevelHeadingLineHeight;
+	text-shadow: 0px 0px 4px @primaryColorShadow;
+	color: @primaryColor;
+	font-weight: bold;
+}
+h2 {
+	font-size: @topLevelHeadingFontSize;
+	line-height: @topLevelHeadingLineHeight;
+	color: @primaryColor;
+	font-weight: bold;
+}
+h3 {
+	font-size: @topLevelHeadingFontSize;
+	line-height: @topLevelHeadingLineHeight;
+}
+
+//Main Document Sections
+header, footer {
+	position: fixed;
+	width: 100%;
+}
+header {
+	top: 0;
+}
+footer {
+	bottom: 0;
+}
+  
+header {
+	height: @headerHeight;
+	background: @secondaryColor;
+	padding-bottom:@paddingHeaderFooter;
+}
+
+header nav {
+	padding: .2em;
+	margin-top: .5em;
+	border: 1px solid @secondaryColor;		
+}
+
+header nav a {
+	display: block;
+	text-align: center;
+	float: left;
+}
+
+@leftColumnWidth: 70%;
+@rightColumnWidth: 28%;
+header.section {
+		float: left;
+}
+
+header.section.left-column {
+	padding-left: 1%;
+	width: @leftColumnWidth;
+}
+
+header.section.right-column {
+	width: @rightColumnWidth;
+}
+
+	//appears in header and footer
+section.social-options label {
+	line-height: 2.0em;
+	cursor: pointer;
+	padding: .3em;
+	margin-right: .4em;
+}
+section.social-options input {
+	display: none;
+}
+
+section.social-options label.active {
+		cursor: pointer;
+		padding: .3em;
+		margin-right: .4em;
+		color: @linkColor;
+		border: 1px solid @secondaryColor;
+}
+
+section.social-options label.inactive {
+	  border: 1px solid @disabledPrimaryColor;
+	  color: @disabledSecondaryColor;
+	  background: @disabledPrimaryColor;
+}
+
+section.social-options label.inactive:hover {
+	cursor: pointer;
+	padding: .3em;
+	margin-right: .4em;
+	color: @linkColor;
+	border: 1px solid @secondaryColor;
+}
+
+#main-content {
+	margin-top: @headerHeight;
+	margin-bottom: @footerHeight;
+}
+
+#main-content ul.feed li {
+	padding: .4em .4em;
+	border-bottom: 1px solid darken(@primaryColor,20%);
+}
+
+@listColor1: #8b9dc3;
+@listColor2: #aadffa;
+#main-content ul.feed li.even {
+	color: @listColor1;
+	h2 {color: @listColor1;}
+	background: @listColor2;
+}
+#main-content ul.feed li.odd {
+	color:  @listColor2;
+	h2 {color: @listColor2;}
+	background: @listColor1;
+}
+
+footer {
+	padding-top: @paddingHeaderFooter;
+	height: @footerHeight;
+	background: @secondaryColor;
+}
+
+#post {
+	text-align: center;
+	
+}
+
+#post textarea {
+	width: 80%;
+	margin: .2em 1em;
+	border: none;
+	font-style: italic;
+}
+
+#post input[type="submit"] {
+	cursor: pointer;
+	color: @primaryColor;
+	font-weight: bold;
+	width: 20%;
+	padding: .4em;
+	border: none;
+	background: @importantButtonBackground;
+}
+
