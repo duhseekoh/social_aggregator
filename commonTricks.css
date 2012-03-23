@@ -1,0 +1,10 @@
+#commonTricks .clear_fix {
+  zoom: 1;
+}
+#commonTricks .clear_fix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}

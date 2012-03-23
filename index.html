@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="reset.css" />
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<title>Social Aggregator</title>
+</head>
+
+<body>
+	<div id="site-container">
+		<header>
+			<section class="left-column">
+				<h1>Social Aggregator</h1>
+				<form id="social-selector">
+					<h2>Filter networks:</h2>
+					<section class="social-options">
+						<label class="twitter active">
+							<span>Twitter</span>
+							<input type="radio" value="twitter" />
+						</label>
+						<label class="facebook active">
+							<span>Facebook</span>
+							<input type="radio" value="facebook" />
+						</label>
+						<label class="linkedin inactive">
+							<span>LinkedIn</span>
+							<input type="radio" value="linkedin" />
+						</label>
+					</section>
+				</form>
+			</section>
+			<section class="right-column">
+				<nav>
+					<a href="#">My Feed</a>
+					<a href="#">Friend Feed</a>
+					<a href="#">Settings</a>
+				</nav>
+			</section>
+		</header>
+	
+		<div id="main-content">
+			<ul class="feed friend-feed">
+				<li class="twitter even">
+					<section class="thumb-holder">
+						<!-- img here -->
+					</section>
+					<section class="status-holder">
+						<h2>@MSU_Basketball</h2>
+						<p>NCAA Tournament 2012: As Draymond Green rises, so do his fellow <a href="#">Spartans</a></p>
+					</section>
+				</li>
+				<li class="twitter odd">
+					<section class="thumb-holder">
+						<!-- img here -->
+					</section>
+					<section class="status-holder">
+						<h2>@jquery</h2>
+						<p>jQuery 1.7.2 Released! <a href="#">http://bit.ly/GEKRh6</a></p>
+					</section>
+				</li>
+				<li class="facebook even">
+					<section class="thumb-holder">
+						<!-- img here -->
+					</section>
+					<section class="status-holder">
+						<h2>Trends among Friends</h2>
+						<p>73 of your friends posted photos of their babies today.</p>
+					</section>
+				</li>
+				<li class="twitter odd">
+					<section class="thumb-holder">
+						<!-- img here -->
+					</section>
+					<section class="status-holder">
+						<h2>@HuffPostChicago</h2>
+						<p>$75 Lolla tickets have come and gone <a href="#">$75 Lolla tickets have come and gone</a></p>
+					</section>
+				</li>
+				<li class="facebook even">
+					<section class="thumb-holder">
+						<!-- img here -->
+					</section>
+					<section class="status-holder">
+						<h2>More Facebook Trends</h2>
+						<p>In the past week 45 of your friends posted a photo of what they made for dinner.</p>
+					</section>
+				</li>
+			</ul>
+		</div>
+		
+		<footer>
+			<h2>Post an update:</h2>
+			<form id="post">
+				<section>
+					<textarea>Post your update here...</textarea>
+				</section>
+				<section class="social-options">
+					<label class="twitter inactive">
+						<span>Twitter</span>
+						<input type="radio" value="twitter" />
+					</label>
+					<label class="facebook active">
+						<span>Facebook</span>
+						<input type="radio" value="facebook" />
+					</label>
+					<label class="linkedin inactive">
+						<span>LinkedIn</span>
+						<input type="radio" value="linkedin" />
+					</label>
+				</section>
+				<section>
+					<input type="submit" value="POST" />
+				</section>
+			</form>
+		</div>
+		</footer>
+	</div>
+	
+</body>
+
+</html>
